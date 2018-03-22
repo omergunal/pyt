@@ -577,6 +577,7 @@ class Visitor(ast.NodeVisitor):
             path=self.filenames[-1]
         ))
 
+    # expr
     def visit_Attribute(self, node):
         return self.visit_miscelleaneous_node(
             node
@@ -593,11 +594,13 @@ class Visitor(ast.NodeVisitor):
             node
         )
 
+    # expr
     def visit_Name(self, node):
         return self.visit_miscelleaneous_node(
             node
         )
 
+    # expr
     def visit_NameConstant(self, node):
         return self.visit_miscelleaneous_node(
             node
@@ -609,11 +612,13 @@ class Visitor(ast.NodeVisitor):
             custom_label='pass'
         )
 
+    # expr
     def visit_Subscript(self, node):
         return self.visit_miscelleaneous_node(
             node
         )
 
+    # expr
     def visit_Tuple(self, node):
         return self.visit_miscelleaneous_node(
             node
@@ -638,6 +643,7 @@ class Visitor(ast.NodeVisitor):
             path=self.filenames[-1]
         ))
 
+    # expr
     def visit_Str(self, node):
         return IgnoredNode()
 

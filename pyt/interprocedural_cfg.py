@@ -155,6 +155,7 @@ class InterproceduralVisitor(Visitor):
 
         self.function_names.append(node.name)
 
+    # stmt
     def visit_ClassDef(self, node):
         self.add_to_definitions(node)
 
@@ -173,11 +174,13 @@ class InterproceduralVisitor(Visitor):
 
         return IgnoredNode()
 
+    # stmt
     def visit_FunctionDef(self, node):
         self.add_to_definitions(node)
 
         return IgnoredNode()
 
+    # stmt
     def visit_Return(self, node):
         label = LabelVisitor()
         label.visit(node)
@@ -851,6 +854,7 @@ class InterproceduralVisitor(Visitor):
             skip_init=skip_init
         )
 
+    # stmt
     def visit_Import(self, node):
         for name in node.names:
             for module in self.local_modules:
@@ -885,6 +889,7 @@ class InterproceduralVisitor(Visitor):
                     )
         return IgnoredNode()
 
+    # stmt
     def visit_ImportFrom(self, node):
         # Is it relative?
         if node.level > 0:
